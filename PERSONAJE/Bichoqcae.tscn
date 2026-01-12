@@ -79,9 +79,8 @@ script = ExtResource("1_jq3f7")
 position = Vector2(11.999996, 10.287609)
 scale = Vector2(0.3478261, 0.34782603)
 sprite_frames = SubResource("SpriteFrames_jq3f7")
-animation = &"grabbed"
+animation = &"falling"
 autoplay = "falling"
-frame_progress = 0.8692216
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -91,7 +90,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12, 11.5)
+position = Vector2(7, 11)
 shape = SubResource("RectangleShape2D_jq3f7")
 
 [node name="Timer" type="Timer" parent="."]
@@ -99,6 +98,7 @@ process_callback = 0
 wait_time = 0.8
 one_shot = true
 
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

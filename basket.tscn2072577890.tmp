@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfalu6vus6dkq"]
+[gd_scene load_steps=6 format=3 uid="uid://bfalu6vus6dkq"]
 
 [ext_resource type="Script" uid="uid://bmulyv0p1am6" path="res://basket.gd" id="1_e01at"]
 [ext_resource type="Texture2D" uid="uid://bmrbarg8ilptb" path="res://Arte/PLACEHOLDER CANASTA.png" id="2_2cwdc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e01at"]
-size = Vector2(110, 25)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e01at"]
+size = Vector2(110, 105)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6k3rk"]
 atlas = ExtResource("2_2cwdc")
@@ -28,17 +26,12 @@ collision_mask = 7
 priority = 1
 script = ExtResource("1_e01at")
 
-[node name="PUNTOS" type="CollisionShape2D" parent="."]
-position = Vector2(0, 37.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_e01at")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-disable_mode = 1
-physics_material_override = SubResource("PhysicsMaterial_e01at")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ick5m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
-[connection signal="score" from="." to="." method="_on_score"]
+[connection signal="hit" from="." to="." method="_on_hit"]

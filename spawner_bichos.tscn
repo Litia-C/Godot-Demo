@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyabdobdd8alv"]
+
+[ext_resource type="Script" uid="uid://bo2lccbtwbk6i" path="res://spawner_bichos.gd" id="1_51wtd"]
+
+[node name="spawner_bichos" type="Node2D"]
+script = ExtResource("1_51wtd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.9
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
