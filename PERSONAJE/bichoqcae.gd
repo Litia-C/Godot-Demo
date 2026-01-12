@@ -7,10 +7,8 @@ const SPEED = 300.0
 var initVelocity = velocity
 @onready var timer: Timer = $Timer
 
-#Función para detectar que entra en una canasta
 
-
-# Función Caer
+# Función de Caer
 func _physics_process(delta: float) -> void:
 	if dragging:
 		velocity = initVelocity  
