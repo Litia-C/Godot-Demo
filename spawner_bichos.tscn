@@ -5,7 +5,10 @@
 [node name="spawner_bichos" type="Node2D"]
 script = ExtResource("1_51wtd")
 
+[node name="PuntoSpawn" type="Marker2D" parent="."]
+position = Vector2(0, -17)
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.9
+wait_time = 0.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

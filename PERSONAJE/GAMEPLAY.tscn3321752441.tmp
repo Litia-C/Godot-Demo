@@ -6,14 +6,17 @@
 
 [node name="GAME" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_puivi")]
+[node name="juego" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CharacterBody2D" parent="juego" instance=ExtResource("1_puivi")]
 position = Vector2(-10, -413)
 
-[node name="BASKET" parent="." instance=ExtResource("2_wwrdc")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="juego"]
 zoom = Vector2(0.9, 0.9)
 limit_right = 15000000
 
-[node name="spawner_bichos" parent="." instance=ExtResource("3_s7u58")]
-position = Vector2(-10, -413)
+[node name="BASKET" parent="juego" instance=ExtResource("2_wwrdc")]
+
+[node name="spawner_bichos" parent="juego" instance=ExtResource("3_s7u58")]
+position = Vector2(1, -473)
