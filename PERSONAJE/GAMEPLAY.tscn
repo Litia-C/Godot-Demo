@@ -1,19 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctbgeqeqgvmym"]
+[gd_scene load_steps=6 format=3 uid="uid://ctbgeqeqgvmym"]
 
-[ext_resource type="PackedScene" uid="uid://1gtde2bybuvq" path="res://PERSONAJE/Bichoqcae.tscn" id="1_puivi"]
 [ext_resource type="PackedScene" uid="uid://bfalu6vus6dkq" path="res://basket.tscn" id="2_wwrdc"]
 [ext_resource type="PackedScene" uid="uid://cyabdobdd8alv" path="res://spawner_bichos.tscn" id="3_s7u58"]
+[ext_resource type="Texture2D" uid="uid://dduer3k7qbj7t" path="res://Arte/The_Nexus_Fondo.png" id="4_rvunb"]
+[ext_resource type="Script" uid="uid://di0g1786lpl1t" path="res://PERSONAJE/puntuacion.gd" id="5_q0yv6"]
+[ext_resource type="AudioStream" uid="uid://dmbvlq7uh56gj" path="res://musica/musica_De_fondo.mp3" id="6_i67kf"]
 
 [node name="GAME" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_puivi")]
-position = Vector2(-10, -413)
-
 [node name="BASKET" parent="." instance=ExtResource("2_wwrdc")]
+light_mask = 3
+visibility_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
+light_mask = 3
+visibility_layer = 3
 zoom = Vector2(0.9, 0.9)
 limit_right = 15000000
 
 [node name="spawner_bichos" parent="." instance=ExtResource("3_s7u58")]
+physics_interpolation_mode = 2
+auto_translate_mode = 2
 position = Vector2(1, -531)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -717.0
+offset_top = -405.0
+offset_right = 714.0
+offset_bottom = 418.0
+texture = ExtResource("4_rvunb")
+
+[node name="Puntuacion" type="Label" parent="."]
+offset_left = 500.0
+offset_top = -363.0
+offset_right = 675.0
+offset_bottom = -250.0
+text = "Puntuación: 0"
+horizontal_alignment = 1
+uppercase = true
+script = ExtResource("5_q0yv6")
+
+[node name="MusicaDeFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_i67kf")
+volume_db = 4.333
+autoplay = true
+
+[connection signal="ready" from="Puntuacion" to="BASKET" method="_on_puntuacion_ready"]

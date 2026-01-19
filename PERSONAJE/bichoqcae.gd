@@ -25,7 +25,6 @@ func _on_button_button_down() -> void:
 	dragging = true
 	timer.start()
 	
-
 func _on_timer_timeout() -> void:	
 	dragging = false
 	$AnimatedSprite2D.play("falling")	

@@ -6,7 +6,7 @@
 script = ExtResource("1_51wtd")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 
 [node name="PuntoSpawn" type="Marker2D" parent="."]
 position = Vector2(-641, -538)

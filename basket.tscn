@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfalu6vus6dkq"]
+[gd_scene load_steps=8 format=3 uid="uid://bfalu6vus6dkq"]
 
 [ext_resource type="Script" uid="uid://bmulyv0p1am6" path="res://basket.gd" id="1_e01at"]
 [ext_resource type="Texture2D" uid="uid://bmrbarg8ilptb" path="res://Arte/PLACEHOLDER CANASTA.png" id="2_2cwdc"]
+[ext_resource type="AudioStream" uid="uid://18s1vsoypuqh" path="res://musica/sonido_punto.mp3" id="3_2cwdc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e01at"]
 size = Vector2(110, 25)
@@ -38,6 +39,9 @@ physics_material_override = SubResource("PhysicsMaterial_e01at")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ick5m")
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2cwdc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
