@@ -17,3 +17,7 @@ DECISIÓN TÉCNICA:
 
 He utilizado este lenguaje de programación porque ha tomado popularidad y estaba interesada en aprender a utilizar motores especializados en videojuegos, sobretodo ante la posiibilidad de migrar un proyecto a éste motor.
 
+EJECUCIÓN:
+
+Teniendo el motor de Godot, este proyecto importando todo el proyecto.
+
